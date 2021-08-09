@@ -1,0 +1,56 @@
+{
+  "name": "nodejs-apollo-mongo-starter",
+  "version": "1.0.0",
+  "description": "This is a starter server to show apollo, mongo, mongoose, express, working together with log in and account features built out.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=env/dev.env",
+    "cron": "node -r dotenv/config src/index.js dotenv_config_path=env/cron.env",
+    "staging": "nodemon -r dotenv/config src/index.js dotenv_config_path=env/staging.env",
+    "prod": "node -r dotenv/config src/index.js dotenv_config_path=env/prod.env",
+    "initProd": "node -r dotenv/config src/index.js dotenv_config_path=env/initProd.env",
+    "test": "jest",
+    "lint": "npm run lint:node && npm run lint:browser",
+    "lint:node": "eslint --config=./.eslintrc *.js scripts/*.js",
+    "lint:browser": "eslint --config=./src/.eslintrc src/**/**/*.js"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "16.6.1",
+    "npm": "6.13.4"
+  },
+  "author": "Joseph Lyman",
+  "license": "MIT",
+  "_moduleAliases": {
+    "@components": "src/components",
+    "@util": "src/util",
+    "@services": "src/services",
+    "@test": "test/"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "apollo-server": "^3.1.2",
+    "apollo-server-express": "^2",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.26.3",
+    "date-fns": "^2.23.0",
+    "date-fns-tz": "^1.1.6",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "graphql": "^15.5.1",
+    "graphql-tools": "^8.1.0",
+    "graphql-type-json": "^0.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.7.8",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.13.5",
+    "nanoid": "^3.1.23",
+    "nodemailer": "^6.6.3"
+  },
+  "devDependencies": {
+    "expect": "^27.0.6",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12"
+  }
+}
